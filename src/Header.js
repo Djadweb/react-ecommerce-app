@@ -6,7 +6,12 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
-//import { AddReactionRounded } from '@mui/icons-material';
+import Button from '@mui/material/Button';
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+
+import logo from './assets/Logo.png'
 
 function Header() {
     const [open, setOpen] = useState(false);  
@@ -34,7 +39,9 @@ function Header() {
                     { open ? <ShopInfo /> : null }                    
                 </div>                                
             </div>  
-            
+            <div className="container">
+                <Navbar />    
+            </div>          
         </div>
     )
 }
@@ -82,6 +89,32 @@ function ShopInfo() {
     )    
 }
 
-
+function Navbar() {
+    return(
+        <nav>
+            <div className="logo">
+                <Link to="/"><img src={logo} alt="logo" /></Link>
+            </div>
+            <div className="nav__links">
+                <Link to="/" className="nav__link">Laptops</Link>
+                <Link to="/" className="nav__link">Desktop PCs</Link>
+                <Link to="/" className="nav__link">Networking Devices</Link>
+                <Link to="/" className="nav__link">Printers & Scanners</Link>
+                <Link to="/" className="nav__link">PC Parts</Link>
+                <Link to="/" className="nav__link">All Other Products</Link>
+                <Link to="/" className="nav__link">Repairs</Link>                
+            </div>
+            <Button variant="outlined" className="dealsBtn">Our Deals</Button>
+            <div className="nav__right">
+                <SearchIcon className="search-icon"/>
+                <div className="cart">
+                    <ShoppingCartOutlinedIcon className="cart-icon"/>                                    
+                    <span className="cart__count">0</span>
+                </div>                
+                <AccountCircleOutlinedIcon  className="profile-icon"/>
+            </div>
+        </nav>
+    ) 
+}
 
 export default Header
