@@ -10,14 +10,17 @@ import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import logo from './assets/Logo.png'
 
 function Header() {
-    const [open, setOpen] = useState(false);  
+    const [open, setOpen] = useState(false);      
     const toggleInfo = () => {
         setOpen(open ? false : true);
-    }
+    }         
+
     return (
         <div className="header">
             <div className="announcement-bar">
@@ -38,10 +41,8 @@ function Header() {
                     </div>         
                     { open ? <ShopInfo /> : null }                    
                 </div>                                
-            </div>  
-            <div className="container">
-                <Navbar />    
-            </div>          
+            </div>              
+            <Navbar />                        
         </div>
     )
 }
@@ -90,31 +91,53 @@ function ShopInfo() {
 }
 
 function Navbar() {
+    const [menu, setMenu] = useState(false); 
+    const openMenu = () => {
+        setMenu(true);
+    }
+
+    const closeMenu = () => {
+        setMenu(false);
+    }
     return(
         <nav>
-            <div className="logo">
-                <Link to="/"><img src={logo} alt="logo" /></Link>
-            </div>
-            <div className="nav__links">
-                <Link to="/" className="nav__link">Laptops</Link>
-                <Link to="/" className="nav__link">Desktop PCs</Link>
-                <Link to="/" className="nav__link">Networking Devices</Link>
-                <Link to="/" className="nav__link">Printers & Scanners</Link>
-                <Link to="/" className="nav__link">PC Parts</Link>
-                <Link to="/" className="nav__link">All Other Products</Link>
-                <Link to="/" className="nav__link">Repairs</Link>                
-            </div>
-            <Button variant="outlined" className="dealsBtn">Our Deals</Button>
-            <div className="nav__right">
-                <SearchIcon className="search-icon"/>
-                <div className="cart">
-                    <ShoppingCartOutlinedIcon className="cart-icon"/>                                    
-                    <span className="cart__count">0</span>
-                </div>                
-                <AccountCircleOutlinedIcon  className="profile-icon"/>
-            </div>
+            <div className="container">              
+                <MenuIcon className="hamburger" onClick={() => openMenu()}/>
+                <div className={ menu ? 'navigation show_sidebar' : 'navigation' }>
+                    <div className="logo">
+                        <Link to="/"><img src={logo} alt="logo" /></Link>
+                    </div>                              
+                    <CloseIcon className="close_sidebar" onClick={() => closeMenu()}/>
+                    <div className="nav__links">
+                        <Link to="/" className="nav__link">Laptops</Link>
+                        <Link to="/" className="nav__link">Desktop PCs</Link>
+                        <Link to="/" className="nav__link">Networking Devices</Link>
+                        <Link to="/" className="nav__link">Printers & Scanners</Link>
+                        <Link to="/" className="nav__link">PC Parts</Link>
+                        <Link to="/" className="nav__link">All Other Products</Link>
+                        <Link to="/" className="nav__link">Repairs</Link>                
+                    </div>
+                    <Button variant="outlined" className="dealsBtn">Our Deals</Button>
+                </div>                                
+                <div className="nav__right">
+                    <SearchIcon className="search-icon"/>
+                    <div className="cart">
+                        <ShoppingCartOutlinedIcon className="cart-icon"/>                                    
+                        <span className="cart__count">0</span>
+                    </div>                
+                    <AccountCircleOutlinedIcon  className="profile-icon"/>
+                </div>
+            </div>            
         </nav>
     ) 
 }
+
+// function Banner() {
+//     return(
+//         <div className="container">
+
+//         </div>
+//     )
+// }
 
 export default Header
