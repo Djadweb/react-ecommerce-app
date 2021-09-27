@@ -13,6 +13,8 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 
+import Slider from './Slider';
+
 import logo from './assets/Logo.png'
 
 function Header() {
@@ -42,7 +44,8 @@ function Header() {
                     { open ? <ShopInfo /> : null }                    
                 </div>                                
             </div>              
-            <Navbar />                        
+            <Navbar />   
+            <Banner />                     
         </div>
     )
 }
@@ -132,12 +135,12 @@ function Navbar() {
     ) 
 }
 
-// function Banner() {
-//     return(
-//         <div className="container">
-
-//         </div>
-//     )
-// }
+function Banner() {
+    return(
+        <div className="container">
+            <Slider />
+        </div>
+    )
+}
 
 export default Header
