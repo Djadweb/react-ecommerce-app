@@ -4,14 +4,14 @@ import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import StarIcon from '@mui/icons-material/Star';
 import './scss/Product.scss'
 
-function Product({ stock, image, reviews,stars, name, price }) {
+function Product({ id, stock, image, reviews,stars, name, price }) {
     return (
-        <div className="product" > 
+        <div className="product"> 
             <div className="stock">
-                { stock > 5 ? <CheckCircleIcon className="in-stock"/> : <ErrorOutlineIcon className="out-stock"/> }                
+                { stock >= 5 ? <CheckCircleIcon className="in-stock"/> : <ErrorOutlineIcon className="out-stock"/> }                
                 { stock > 0 ? <p className="in-stock">in stock</p> : <p className="out-stock">out of stock</p> }                
             </div>
-            <div className="product__image"><img src={image}/></div>
+            <div className="product__image"><img src={image} alt=""/></div>
             <div className="product__reviews">                
                 <div className="stars">
                     <div>

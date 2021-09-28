@@ -1,4 +1,5 @@
 @import './colors';
+@import './devices';
 
 .product {
     width: clamp(174px, 200px, 210px);
@@ -7,7 +8,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    // flex-shrink: 0;  
     .stock {
         font-size: 12px;
         display: flex;

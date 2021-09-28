@@ -1,7 +1,45 @@
+@import './colors';
+@import './devices';
 
-.home .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+.home .container {    
+    .new-products {
+        padding: 1rem 0;                    
+        overflow: hidden;        
+        max-height: 320px;        
+        .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .new-products__link {
+                font-size: 10px;
+                color: $dark-blue;
+                text-decoration: underline;
+            }
+
+        }              
+    }
+
+    .products {            
+        display: flex;                        
+        justify-content: space-between;
+        align-items: center;                                                
+        flex-wrap: wrap;
+        width: 100%;
+    }  
+
+    .home___row {  
+        @media (max-width: $breakpoint-mobile) {
+            flex-direction: column;
+            max-height: 400px;
+        }  
+        display: flex;    
+        margin: 2rem 0;                    
+        overflow: hidden;        
+        max-height: 350px;               
+
+        .product-category {
+            flex-shrink: 0;
+        }
+    }
 }
