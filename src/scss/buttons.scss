@@ -1,0 +1,32 @@
+@import './colors';
+
+.btn1 {
+    width: 125px!important;        
+    border-radius: 20px!important;
+    border: solid 2px $dark-blue!important;
+    color: $dark-blue!important;
+    font-weight: 600!important;
+    text-transform: none!important;
+    margin-left: 10px!important;
+}
+
+.btn2 {
+    width: 190px!important;        
+    border-radius: 20px!important;
+    border: solid 2px $dark-blue!important;
+    color: $dark-blue!important;
+    font-weight: 600!important;
+    text-transform: none!important;
+    margin-left: 10px!important;
+}
+
+.btn3 {
+    width: 150px!important;        
+    border-radius: 20px!important;
+    border: solid 2px $dark-blue!important;
+    color: $white-color!important;
+    font-weight: 600!important;
+    text-transform: none!important;
+    margin-left: 25px!important;
+    background-color: $dark-blue!important;
+}

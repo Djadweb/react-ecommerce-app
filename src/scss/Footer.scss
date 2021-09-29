@@ -1,0 +1,62 @@
+@import './colors';
+@import './devices';
+
+.footer {
+    max-height: 520px;
+    height: 520px;
+    width: 100%;
+    background-color: $dark-color;
+    padding: 2rem 0;    
+    color: $white-color;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        .signup {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h1 {
+                font-size: 1.8rem;
+                font-weight: 400;
+            }
+
+            p {
+                color: $medium-gray;
+                padding: 10px 0;
+                font-size: 14px;
+            }            
+
+            input {
+                width: 300px;
+                padding: 10px;
+                background-color: transparent;
+                border: 1px solid $white-color;
+            }
+        }
+        
+        .links {
+            display: flex;
+            justify-content: space-between;
+
+            .link-column {
+                display: flex;
+                flex-direction: column;
+                
+                p {font-size: 14px;color: $dark-gray;font-weight: 600;padding: 20px 0;}
+
+                .link {
+                    font-size: 12px;
+                    color: $light-gray;
+                    padding: 2px 0;
+
+                    span {
+                        color: $light-blue;
+                    }
+                }
+            }
+        }
+    }
+}

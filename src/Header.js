@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './scss/Header.scss';
+import './scss/buttons.scss';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -120,7 +121,7 @@ function Navbar() {
                         <Link to="/" className="nav__link">All Other Products</Link>
                         <Link to="/" className="nav__link">Repairs</Link>                
                     </div>
-                    <Button variant="outlined" className="dealsBtn">Our Deals</Button>
+                    <Button variant="outlined" className="btn1 dealsBtn">Our Deals</Button>
                 </div>                                
                 <div className="nav__right">
                     <SearchIcon className="search-icon"/>
