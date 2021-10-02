@@ -1,10 +1,17 @@
 import { Button } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './scss/Footer.scss'
 import './scss/buttons.scss'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import paypal from './assets/payement/paypal.png';
+import visa from './assets/payement/visa.png';
+import maestro from './assets/payement/maestro.png';
+import discover from './assets/payement/discover.png';
+import americanexpress from './assets/payement/american-express.png';
 
-function Footer() {
+function Footer() {      
     return (
         <footer className="footer">
             <div className="container">
@@ -13,68 +20,102 @@ function Footer() {
                             <h1>Sign Up To Our Newsletter.</h1>
                             <p>Be the first to hear about the latest offers.</p>
                         </div>
-                        <div>
+                        <div className="email">
                             <input className="email" type="text" placeholder="Your Email"/>
                             <Button className="btn3">Subscribe</Button>
                         </div>
                     </div>
-                    <div className="links">
-                        <div className="link-column">
-                            <p>Information</p>
-                            <Link className="link">About Zip</Link>
-                            <Link className="link">Privacy Policy</Link>
-                            <Link className="link">Search</Link>
-                            <Link className="link">Terms</Link>
-                            <Link className="link">Orders and Returns</Link>
-                            <Link className="link">Contact Us</Link>
-                            <Link className="link">Advanced Search</Link>
-                            <Link className="link">Newsletter Subscription</Link>                    
-                        </div>
-                        <div className="link-column">
-                            <p>PC Parts</p>
-                            <Link className="link">CPUS</Link>
-                            <Link className="link">Add On Cards</Link>
-                            <Link className="link">Hard Drives (Internal)</Link>
-                            <Link className="link">Graphic Cards</Link>
-                            <Link className="link">Keyboards / Mice</Link>
-                            <Link className="link">Cases / Power Supplies / Cooling</Link>
-                            <Link className="link">RAM (Memory)</Link>
-                            <Link className="link">Software</Link>                    
-                            <Link className="link">Speakers / Headsets</Link>                    
-                            <Link className="link">Motherboards</Link>                    
-                        </div>
-                        <div className="link-column">
-                            <p>Desktop PCs</p>
-                            <Link className="link">Custom PCs</Link>
-                            <Link className="link">Servers</Link>
-                            <Link className="link">MSI All-In-One PCs</Link>
-                            <Link className="link">HP/Compaq PCs</Link>
-                            <Link className="link">ASUS PCs</Link>
-                            <Link className="link">Cases / Power Supplies / Cooling</Link>
-                            <Link className="link">Tecs PCs</Link>                                          
-                        </div>
-                        <div className="link-column">
-                            <p>Laptops</p>
-                            <Link className="link">Evryday Use Notebooks</Link>
-                            <Link className="link">MSI Workstation Series</Link>
-                            <Link className="link">MSI Prestige Series</Link>
-                            <Link className="link">Tablets and Pads</Link>
-                            <Link className="link">Netbooks</Link>
-                            <Link className="link">Infinity Gaming Notebooks </Link>                               
-                        </div>
-                        <div className="link-column">
-                            <p>Laptops</p>
-                            <p className="link">Address: 1234 Street Adress City Address, 1234</p>                            
-                            <p className="link">Phones: <span>(00) 1234 5678</span></p>                            
-                            <p className="link">We are open: Monday-Thursday: 9:00 AM - 5:30 PM</p>                            
-                            <p className="link">Friday: 9:00 AM - 6:00 PM</p>                            
-                            <p className="link">Saturday: 11:00 AM - 5:00 PM</p>                            
-                            <p className="link">E-mail: <span>shop@email.com</span></p>                                                      
-                        </div>  
+                    <div className="links">                        
+                        <LinksColumn 
+                            title="Information"
+                            links={['About Zip', 
+                                    'Privacy Policy',
+                                    'Search',
+                                    'Terms',
+                                    'Orders and Returns',
+                                    'Contact Us',
+                                    'Advanced Search',
+                                    'Newsletter Subscription'
+                                  ]}
+                        />
+                        <LinksColumn 
+                            title="PC Parts"
+                            links={['CPUS', 
+                                    'Add On Cards',
+                                    'Hard Drives (Internal)',
+                                    'Graphic Cards',
+                                    'Keyboards / Mics',
+                                    'RAM (Memory)',
+                                    'Software',
+                                    'Speakers / Headsets',
+                                    'Motherboards'
+                                  ]}
+                        />
+                        <LinksColumn 
+                            title="Desktop PCs"
+                            links={['Custom PCs', 
+                                    'Servers',
+                                    'MSI All-In-One PCs',
+                                    'HP/Compaq PCs',
+                                    'ASUS PCs',
+                                    'RAM (Memory)',
+                                    'Cases / Power Supplies / Cooling',
+                                    'Tecs PCs'
+                                  ]}
+                        />
+                        <LinksColumn 
+                            title="Laptops"
+                            links={['Custom PCs', 
+                                    'Everyday Use Notebooks',
+                                    'MSI Workstation Series',
+                                    'MSI Prestige Series',
+                                    'Tablets and Pads',
+                                    'Netbooks',
+                                    'Infinity Gaming Notebooks'
+                                  ]}
+                        />
+                        <LinksColumn 
+                            title="Address"
+                            links={['Address: 1234 Street Adress City Address, 1234', 
+                                    'Phones: <span>(00) 1234 5678</span>',
+                                    'We are open: Monday-Thursday: 9:00 AM - 5:30 PM',
+                                    'Friday: 9:00 AM - 6:00 PM',
+                                    'Saturday: 11:00 AM - 5:00 PM',
+                                    'E-mail: <span>shop@email.com</span>'  
+                                  ]}
+                        />
                     </div>
-                    <div className="bottom"></div>
+                    <div className="bottom">
+                        <div className="social-media">
+                            <a href="https://facebook.com" target="_blank"><FacebookIcon/></a>
+                            <a href="https://instagram.com" target="_blank"><InstagramIcon/></a>
+                        </div>                        
+                        <div className="payments">
+                            <img src={paypal} alt="" />
+                            <img src={visa} alt="" />
+                            <img src={maestro} alt="" />
+                            <img src={discover} alt="" />
+                            <img src={americanexpress} alt="" />
+                        </div>
+                        <div className="copyright">
+                            <p>Copyright © 2020 Shop Pty. Ltd.</p>
+                        </div>
+                    </div>
             </div>            
         </footer>
     )
 }
 export default Footer
+
+
+function LinksColumn(props) {
+    const [opened, setOpened] = useState(false);
+    return(
+        <div className={opened ? "link-column opened-links" : "link-column closed-links"} onClick={(e) => setOpened(!opened)}>
+            <p>{ props.title }</p>
+            {props.links.map(link => 
+                (<Link className="link">{ link }</Link>)
+            )}        
+       </div>        
+    )
+}
