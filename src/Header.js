@@ -17,13 +17,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Slider from './Slider';
 
 import logo from './assets/Logo.png'
+import { useStateValue } from './StateProvider';
 
 function Header() {
     const [open, setOpen] = useState(false);      
     const toggleInfo = () => {
         setOpen(open ? false : true);
-    }         
-
+    }             
     return (
         <div className="header">
             <div className="announcement-bar">
@@ -103,6 +103,8 @@ function Navbar() {
     const closeMenu = () => {
         setMenu(false);
     }
+
+    const [{ basket }, dispatch] = useStateValue();
     return(
         <nav>
             <div className="container">              
@@ -127,7 +129,7 @@ function Navbar() {
                     <SearchIcon className="search-icon"/>
                     <div className="cart">
                         <ShoppingCartOutlinedIcon className="cart-icon"/>                                    
-                        <span className="cart__count">0</span>
+                        <span className="cart__count">{basket?.length}</span>
                     </div>                
                     <AccountCircleOutlinedIcon  className="profile-icon"/>
                 </div>

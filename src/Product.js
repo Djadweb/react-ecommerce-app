@@ -2,9 +2,28 @@ import React from 'react'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import StarIcon from '@mui/icons-material/Star';
+import Button from '@mui/material/Button';
 import './scss/Product.scss'
+import { useStateValue } from './StateProvider'
 
-function Product({ id, stock, image, reviews,stars, name, price }) {
+function Product({ id, stock, image, reviews, stars, name, price }) {
+    const [{ basket }, dispatch] = useStateValue();
+    
+    const addToBasket = () => {        
+        //ADD ITEM TO BASKET
+        dispatch({
+            type: 'ADD_TO_BASKET',
+            item: {
+                id: id,
+                stock: stock,
+                image: image,
+                reviews: reviews,
+                stars: stars,
+                name: name, 
+                price: price
+            }
+        })
+    }
     return (
         <div className="product"> 
             <div className="stock">
@@ -27,6 +46,9 @@ function Product({ id, stock, image, reviews,stars, name, price }) {
             <div className="product__price">
                 <div className="old-price"><strike>${price}</strike></div>
                 <div className="new-price">${price}</div>                
+            </div>
+            <div className="add-to-cart">
+                <Button onClick={() => addToBasket()} variant="contained btn4">ADD TO CART</Button>
             </div>
         </div>
     )
