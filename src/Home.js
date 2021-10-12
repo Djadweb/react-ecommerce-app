@@ -5,6 +5,7 @@ import Product from './Product'
 import ProductCategory from './ProductCategory'
 import Support from './Support'
 import Footer from './Footer'
+import Slider from './Slider';
 
 import './scss/Home.scss'
 import './scss/buttons.scss'
@@ -34,10 +35,12 @@ import igpost7 from "./assets/ig-posts/IG-post(7).png"
 import igpost9 from "./assets/ig-posts/IG-post(9).png"
 import quote from "./assets/quote.png"
 
+
 function Home() {
     return (        
-        <div className="home">
-            <div className="container">                                         
+        <div className="home">            
+            <div className="container"> 
+               <Banner />                           
                {/* New products section */}
                 <div className="new-products">
                     <div className="head">
@@ -388,6 +391,14 @@ function Home() {
            {/* Footer section */}
            <Footer />
         </div>  
+    )
+}
+
+function Banner() {
+    return(
+        <div>
+            <Slider />
+        </div>
     )
 }
 

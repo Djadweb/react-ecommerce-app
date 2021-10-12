@@ -1,0 +1,29 @@
+@import './colors';
+@import './devices';
+
+.subtotal {    
+    background-color: $ligh-background;
+    height: 160px;
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .subtotal__price {        
+        display: flex;
+        justify-content: center;        
+    }
+    .price {        
+        display: flex;        
+        padding: 10px 0;
+        #price {font-size: 1.5rem;}          
+    }
+
+    // .checkout {
+    //     bottom: 0!important;
+    //     margin-top: auto!important;
+    // }
+}

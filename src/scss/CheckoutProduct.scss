@@ -1,0 +1,29 @@
+@import './colors';
+
+.checkoutProduct {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 180px;
+    border-top: 1px solid $light-gray;
+    padding: 25px 0;
+    margin-top: 1rem;
+    img {width:140px;height:140px}
+
+    #item {
+        display: flex;
+    }
+
+    .checkoutProduct__title {
+        padding: 1rem 0;
+        p {font-size: 16px;font-weight: 600;}
+    }
+    .checkoutProduct__price {
+        padding: 1rem 0;
+        width: 100px;
+        display: flex;  
+        justify-content: flex-end;      
+        p {font-size: 16px;font-weight: 600;}
+    }
+}

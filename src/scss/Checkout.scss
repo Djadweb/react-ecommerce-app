@@ -1,0 +1,39 @@
+@import './devices';
+@import './colors';
+
+.checkout {    
+    .container {
+        @media(max-width: $breakpoint-tablet) {
+            flex-direction: column-reverse;
+            align-items: center;
+            table {width: 100%!important;}                    
+        }
+        display: flex;
+        justify-content: space-between;
+        h1 {font-weight: 600;}
+        h5 {font-weight: 600;margin: 20px 0;}
+        table {width: 80%;}        
+
+        // table tr th {
+        //     text-align: left;
+        // }
+
+        #item {
+            display: flex;
+            justify-content: space-between;         
+        }
+
+        .checkout__items {
+            width: 80%;
+            margin: 2rem 0;
+        }
+
+        .checkout__total {
+            @media(max-width: $breakpoint-tablet) {
+                width: 80%;
+                margin: 1rem 0;
+            }
+            width: 20%;
+        }
+    }
+}

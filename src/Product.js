@@ -3,6 +3,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import StarIcon from '@mui/icons-material/Star';
 import Button from '@mui/material/Button';
+import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 import './scss/Product.scss'
 import { useStateValue } from './StateProvider'
 
@@ -48,7 +49,7 @@ function Product({ id, stock, image, reviews, stars, name, price }) {
                 <div className="new-price">${price}</div>                
             </div>
             <div className="add-to-cart">
-                <Button onClick={() => addToBasket()} variant="contained btn4">ADD TO CART</Button>
+                <Button onClick={() => addToBasket()} variant="contained btn4"><AddShoppingCartOutlinedIcon/>Add To Cart</Button>
             </div>
         </div>
     )

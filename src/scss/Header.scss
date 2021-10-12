@@ -193,7 +193,9 @@ nav {
             }
     
             .cart {
-                position: relative;               
+                position: relative;           
+                text-decoration: none;
+                color: $dark-color;    
                 @include align-center;
         
                 .cart__count {
@@ -282,17 +284,5 @@ nav {
                 }
             }
         }    
-    }
-}
-.slider {
-    button {
-        display: none;
-    }
-
-    .slider__item {
-        img {
-            width: 100%;
-            height: 100%;
-        }
     }
 }

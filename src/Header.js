@@ -14,8 +14,6 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import Slider from './Slider';
-
 import logo from './assets/Logo.png'
 import { useStateValue } from './StateProvider';
 
@@ -45,8 +43,7 @@ function Header() {
                     { open ? <ShopInfo /> : null }                    
                 </div>                                
             </div>              
-            <Navbar />   
-            <Banner />                     
+            <Navbar />                               
         </div>
     )
 }
@@ -127,10 +124,10 @@ function Navbar() {
                 </div>                                
                 <div className="nav__right">
                     <SearchIcon className="search-icon"/>
-                    <div className="cart">
+                    <Link to="checkout" className="cart">
                         <ShoppingCartOutlinedIcon className="cart-icon"/>                                    
                         <span className="cart__count">{basket?.length}</span>
-                    </div>                
+                    </Link>                
                     <AccountCircleOutlinedIcon  className="profile-icon"/>
                 </div>
             </div>            
@@ -138,12 +135,6 @@ function Navbar() {
     ) 
 }
 
-function Banner() {
-    return(
-        <div className="container">
-            <Slider />
-        </div>
-    )
-}
+
 
 export default Header

@@ -31,13 +31,28 @@
     background-color: $dark-blue!important;
 }
 
-.btn4 {
+.btn4 {    
     width: 150px!important;        
+    border-radius: 20px!important;
+    border: solid 2px $dark-blue!important;
+    color: $dark-blue!important;
+    font-weight: 600!important;
+    text-transform: none!important;
+    font-size: 13px!important;
+    margin-left: 18px!important;
+    svg {
+        font-size: 18px!important;
+        margin-right: 5px;
+    }
+}
+
+.btn5 {
+    width: 100%!important;        
     border-radius: 20px!important;
     border: solid 2px $dark-blue!important;
     color: $white-color!important;
     font-weight: 600!important;
     text-transform: none!important;
+    font-size: 12px!important;
     background-color: $dark-blue!important;
-    font-size: 11px!important;
 }
