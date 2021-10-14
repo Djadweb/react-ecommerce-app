@@ -1,0 +1,16 @@
+@import './colors';
+
+.support {        
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;        
+    margin: 0 auto;        
+    flex-wrap: wrap;     
+    background-color: $ligh-background;
+    margin-top: 5rem;   
+    
+
+    .benifit {
+        padding: 1rem;                        
+    }
+}

@@ -4,6 +4,8 @@ import account from "./assets/account.png"
 import savings from "./assets/savings.png"
 import support from "./assets/support.png"
 
+import './scss/Support.scss'
+
 function Support() {
     return (
         <div className="support">                    

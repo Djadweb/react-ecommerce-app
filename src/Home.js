@@ -383,11 +383,10 @@ function Home() {
                     <Link className="review-cta">                                
                         <Button variant="outlined" className="btn2">Leave Us A Review</Button>
                     </Link>                    
-                </div>            
-
-                {/* Support section */}
-                <Support />                
+                </div>                                         
            </div>
+            {/* Support section */}
+            <Support />  
            {/* Footer section */}
            <Footer />
         </div>  
