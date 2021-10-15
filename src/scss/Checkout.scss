@@ -2,6 +2,7 @@
 @import './colors';
 
 .checkout {    
+    margin: 2rem 0;
     .container {
         @media(max-width: $breakpoint-tablet) {
             flex-direction: column-reverse;
