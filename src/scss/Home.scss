@@ -1,10 +1,8 @@
 @import './colors';
 @import './devices';
 
-.home .container {        
-    .new-products {
-        padding: 1rem 0;                                 
-        
+.home .container {       
+    .new-products {        
         .new-products__link {
             font-size: 10px;
             color: $dark-blue;
@@ -18,32 +16,49 @@
         align-items: center;
     }
 
-    .products {            
+    .products {                    
+        @media (max-width: $breakpoint-tablet) {
+            justify-content: flex-start;                        
+        } 
+        &::-webkit-scrollbar {
+            display: none;
+        }
         display: flex;                        
-        justify-content: space-between;
-        align-items: center;                                                
-        flex-wrap: wrap;
-        width: 100%;
+        justify-content: space-between;                                          
+        overflow-x: scroll;                                        
+        width: 100%;                
+        .product {
+            height: 100%;
+        }
     }  
 
     .home___row {  
         @media (max-width: $breakpoint-mobile) {
-            flex-direction: column;
-            max-height: 480px;
+            flex-direction: column;            
         }  
         display: flex; 
         margin: 2rem 0;                    
         overflow: hidden;        
-        max-height: 360px;   
+        min-height: 550px;   
+        // &::-webkit-scrollbar {
+        //     display: none;
+        // }
 
         .product-category {
             flex-shrink: 0;
-        }
+            margin: auto 0;
+        }                   
+    }
+
+    .brands-row {
+        display: flex; 
+        margin: 2rem 0;                    
+        overflow: hidden;        
         
         .brands {
             display: flex;            
-            width: 100%;
-            flex-wrap: wrap;
+            width: 100%;            
+            flex-wrap: wrap;         
             justify-content: center;
 
             .brand {
@@ -54,7 +69,7 @@
                     height: 100%;
                 }
             }
-        }    
+        } 
     }
 
     .follow-us {
