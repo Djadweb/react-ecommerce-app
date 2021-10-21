@@ -1,0 +1,76 @@
+@import 'colors';
+@import 'devices';
+
+.payment {    
+    border: 1px solid $light-gray;
+    margin: 4rem auto 4rem auto;
+    box-shadow: 2px 2px 5px $light-gray;
+    padding: 1rem;
+
+    hr { display: block; height: 1px;
+        border: 0; border-top: 1px solid #ccc;
+        margin: 1em 0; padding: 0; width: 95%; margin: 0 auto;}    
+}
+
+.payment__section {
+    display: flex;
+    margin: 30px;                
+
+    h3 {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    div {
+        margin-left: 25px;
+        font-size: 12px;
+        font-weight: 400;            
+    }
+
+    .payment__items {
+        p {
+            width: 100%;                            
+        }
+    }
+}
+
+.checkoutProduct {
+    border: 0;    
+    margin: 0;
+}
+
+#item {
+    border: none!important;                    
+    .checkoutProduct__title {                        
+        margin: 0;
+        width: 200px;
+        p {
+            font-size: 13px;
+        }
+    }                               
+}
+
+.items {    
+    margin: 30px;    
+    max-width: 500px;
+    h3 {
+        font-size: 14px;
+        font-weight: 600;
+    }    
+}
+
+.stripe__payment {    
+    margin: 30px;    
+    max-width: 500px;
+    h3 {
+        font-size: 14px;
+        font-weight: 600;        
+    }    
+    
+    form {
+        margin: 20px 0;
+    }
+}
+
+
+

@@ -5,7 +5,7 @@ import CheckoutProduct from './CheckoutProduct';
 import SubTotal from './SubTotal';
 
 function Checkout() {
-    const [{ basket }] = useStateValue();
+    const [{ basket }] = useStateValue();    
     return (
         <div className="checkout"> 
         <div className="container"><h1>Shopping Cart</h1></div>        
@@ -29,9 +29,10 @@ function Checkout() {
                                             name={item.name}
                                             image={item.image}
                                             price={item.price}                                
-                                        />
-                                    ))}
-                                </tr>
+                                        />                                        
+                                    ))
+                                    }
+                                </tr>                                
                             </table>
                         </div>
                     )}                    

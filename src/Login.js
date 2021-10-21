@@ -48,7 +48,7 @@ function Login() {
                         </div>
                         <div className="validation">
                             <Button onClick={login} className="btn3">Sign in</Button>
-                            <Button onClick={register} className="btn1">Create my account</Button>
+                            <Button onClick={register} className="btn4">Create my account</Button>
                         </div>                    
                     </div>
                 </div>

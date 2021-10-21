@@ -4,6 +4,7 @@ import './scss/SubTotal.scss'
 import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from './StateProvider';
 import { getBasketTotal } from './reducer';
+import { Link } from 'react-router-dom';
 
 function SubTotal() {
     const [{basket}, dispatch] = useStateValue();
@@ -28,7 +29,9 @@ function SubTotal() {
                     </p>                    
                 </div>
             </div>            
-            <Button className="checkout btn5">Proceed To Checkout</Button>
+            <Link to="/payment">
+                <Button className="checkout btn5">Proceed To Checkout</Button>
+            </Link>
         </div>
     )
 }

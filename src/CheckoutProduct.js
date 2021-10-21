@@ -1,7 +1,9 @@
 import React from 'react'
 import './scss/CheckoutProduct.scss';
+import { useStateValue } from './StateProvider';
 
 function CheckoutProduct({ id, name, image, price }) {
+    
     return (       
             <div className="checkoutProduct">
                 <td id="item">
@@ -14,8 +16,8 @@ function CheckoutProduct({ id, name, image, price }) {
                     <div className="checkoutProduct__price">
                         <p>$</p>
                         <p>{price}</p>
-                    </div>
-                </td>                           
+                    </div>                    
+                </td>   
             </div>    
     )
 }
