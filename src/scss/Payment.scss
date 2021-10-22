@@ -72,5 +72,16 @@
     }
 }
 
+.payment__price-container {    
+    @media(max-width: $breakpoint-tablet) {
+     text-align: center;
+    }
+    .pay{        
+        font-size: 1.1rem!important;
+        width: 350px!important;
+        margin-top: 3rem;
+        cursor: pointer;
+    }
+}
 
 
